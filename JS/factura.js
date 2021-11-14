@@ -139,7 +139,9 @@ function EliminarFactura(IDFACTURA){
             console.log(response);
         }
      });
+     
      alert("Factura Eliminado");
+     CargarFacturas(); // Se agrega para que actualice los resultados 
     }
 
 
