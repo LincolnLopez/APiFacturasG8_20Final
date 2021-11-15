@@ -50,7 +50,8 @@ function AgregarFactura(){
         SUB_TOTAL: $('#SUB_TOTAL').val(),
         TOTAL_ISV: $('#TOTAL_ISV').val(),
         TOTAL: $('#TOTAL').val(),
-        FECHA_VENCIMIENTO: $('#FECHA_VENCIMIENTO').val()
+        FECHA_VENCIMIENTO: $('#FECHA_VENCIMIENTO').val(),
+        ESTADO: $('#ESTADO').val()
     };
     var datosfacturajson= JSON.stringify(datosfactura);
 
@@ -89,6 +90,7 @@ function CargarFactura(IDFACTURA){
             $('#TOTAL_ISV').val(MiItems[0].TOTAL_ISV);
             $('#TOTAL').val(MiItems[0].TOTAL);
             $('#FECHA_VENCIMIENTO').val(MiItems[0].FECHA_VENCIMIENTO);
+            $('#ESTADO').val(MiItems[0].ESTADO);
             var btnactualizar = '<input type="submit" id="btn_actualizar" onclick="ActualizarFactura('+MiItems[0].ID+')"'+
             'value="Actualizar Factura" class="btn btn-primary"></input>';
             $('.btnagregar').html(btnactualizar);
@@ -107,7 +109,7 @@ function ActualizarFactura(IDFACTURA){
         TOTAL_ISV: $('#TOTAL_ISV').val(),
         TOTAL: $('#TOTAL').val(),
         FECHA_VENCIMIENTO: $('#FECHA_VENCIMIENTO').val(),
-        ESTADO: 'F' 
+        ESTADO: $('#ESTADO').val(), 
     };
     var datosfacturajson= JSON.stringify(datosfactura);
     $.ajax({
